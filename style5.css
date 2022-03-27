@@ -439,3 +439,9 @@ span{
         z-index: 100;
     }; */
 }
+
+@media only screen and (min-width: 2000px){
+    span p {
+        font-size: 2.5vw;
+    }
+}
