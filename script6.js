@@ -549,9 +549,9 @@ function InstruksjonsKnappTrykket(){
 
 //Koden som forandrer teksten når man bruker mobil
 
-/* let skjermBredde = screen.width;
+let skjermBredde = screen.width;
 console.log(skjermBredde);
 if (skjermBredde < 500){
     instruksjonsTekstEl.innerHTML = "<h1>Programmet er ikke kompatibelt med mobil </h1>";
 }  
-  */
+ 
