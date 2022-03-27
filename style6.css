@@ -17,33 +17,19 @@ body{
 #navbar{
     display: flex;
     flex-direction: row;
-    /* justify-content: left; */
-    /* align-items: center; */
     position: sticky;
     top: 0px;
     z-index: 10;
-    /* border: solid 1px #000;  */
-    /* height: 100%; */
     width: 100%;
     height: 100px;
-    /* padding: 1.4%; */
-    /* background-color: midnightblue; */
-    
 }
 
 #navLeft,#navRight{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 50%;
-    height: 100%; */
     height: 100%;
     width: 40vw;
-    
-    /* padding: 1.4% 4.5%; */
-    
-    /* border: solid 1px #000; */
-    
 }
 #navMid{
     display: flex;
@@ -52,11 +38,7 @@ body{
     width: 20vw;
     text-align: center;
 }
-/* 
-#navLeft{
-    padding: 1.4%;
-}
-*/
+
 #navRight{
     justify-content: right;
     padding-right: 4vw;
@@ -74,11 +56,9 @@ body{
 #questionMark{
     width: 60px;
     height: 60px;
-    /* background-color:#ffe6c1 ; */
     background-color: #E3CAA5;
     border-radius: 100%;
-    /* border: solid 5px #AD8B73 ; */
-    /* box-shadow:0px 0px 0px 4px #AD8B73 inset; */
+  
     
 }
 
@@ -98,10 +78,6 @@ body{
 }
 
 #instruksjonsMeny{
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-
     background-color: #E3CAA5;
     width: 72vw;
     height: 80vh;
@@ -110,8 +86,6 @@ body{
     display: none;
     margin-top: 8%;
     box-shadow: 2px 2px 7px;
-    
-    
 }
 #instruksjonsMeny.active{
     display: initial;
@@ -150,18 +124,12 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #FFFBE9;
-    /* margin: 1.5%; */
-    /* padding: 2% 5%; */
     box-shadow: 2px 2px 7px;
     width: 48%; 
     height: 100%;
-    /* position: absolute;
-    margin: 40% 0; */
-    
 }
 
 .knapper:hover{
-    /* background-color: #e9e2c5; */
     background-color: #E3CAA5;
     transition: background-color 0.1s;
 }
@@ -171,16 +139,7 @@ body{
     height: 101%;  
     transition: height 0.01s; 
     transition: width 0.01s; 
-    /* animation: startKnappAnimasjon;
-    animation-duration: 1s; */
-
 }
-/* 
-@keyframes startKnappAnimasjon{
-    0%{width: 12vw; ; height: 12vh;}
-    50{width: 20vw; ; height: 20vh;}
-    100%{width: 12vw; ; height: 12vh;}
-} */
 
 #hoved{
     /* position: absolute; */
@@ -199,11 +158,9 @@ body{
     flex-direction: column;
     background-color: #FFFBE9;
     justify-content: center;
-    align-items: center;
-    /* padding: 7%; */ 
+    align-items: center; 
     height: 30vh;
     width: 70vw;
-    /* border: solid 1px #000; */
     margin-bottom: 10%;
     box-shadow: 0px 2px 7px;
 }
@@ -231,25 +188,14 @@ span{
     display: flex;
     align-items: center;
     background-color: #FFFBE9;
-    /* height: 40px; */
     height: 5vh;
     width: 15vw;
     border: solid 1px rgb(138, 112, 59);
     padding-left: 15%;
-    /* padding-left: 15%;  */ 
     font-size: 1.4vw;
     margin-bottom: 20%;
 } 
 
-/* #skriveFeltMobil{
-    display: none;
-} */
-
-
-/* 
-#poengTeller{
-    font-size: 1vw;
-} */
 
 @media only screen and (max-width: 1050px){
     
@@ -399,15 +345,6 @@ span{
         width: 30vw;
         font-size: 4vw;
     }
-
-    /* oppstartKnapp{
-        width: 70vw;
-    }
-    
-    #oppstartKnapp:active{
-        width: 71vw;
-    } */
-
 }
 
 @media only screen and (max-width: 450px){
@@ -420,12 +357,6 @@ span{
         z-index: 100;
     };
 
-    /* #instruksjonsMeny.active{
-        margin: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 100;
-    }; */
 }
 
 @media only screen and (min-width: 1500px){
