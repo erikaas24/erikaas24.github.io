@@ -329,7 +329,7 @@ function sjekkTast(e){
     } else if( e.keyCode >= 65 && e.keyCode <= 90){
         //If testen gjør slik at alle tall som ikke er bokstaver ikke skrives inn i feltet når de trykkes på
         skriveFeltEl.innerText += valgtTast;
-    } else if(e.key == "å" || e.keyCode == "æ" || e.key == "ø"){
+    } else if(e.key == "å" || e.key == "æ" || e.key == "ø"){
         //legger til æ ø å siden de ikke dekkes av keycode-intervallet i if-testen ovenfor
         skriveFeltEl.innerText += valgtTast;
     } 
@@ -399,7 +399,7 @@ function trykkHendelser(e){
     let bokstavEl = document.querySelector("#p" + ordRiktige + pointer); 
     
     //If testen sier at så lenge man trykker på en bokstav i det norske alfabetet så skal den være true
-    if(e.keyCode == 222 || e.keyCode == 219 || e.keyCode == 186 || e.keyCode == 32 || (e.keyCode >= 65 && e.keyCode <= 90)){
+    if(e.keyCode == 222 || e.keyCode == 219 || e.keyCode == 186 || e.key == "ø" || e.key == "å" || e.key == "æ"|| e.keyCode == 32 || (e.keyCode >= 65 && e.keyCode <= 90)){
 
 
         //If testen sier at den skal legge til bokstaven skrevet i ordSkrevet variabelen så lenge man ikke har trykket på space og ordet er det samme. Den legger til space med template literals i else if løkken. Det funker kun med template literals
@@ -440,7 +440,7 @@ function trykkHendelser(e){
 
     
     //Fjerner siste tegn i ordskrevet når man visker
-    if (e.keyCode == 8){
+    if (e.keyCode == 8 || e.key == "Backspace"){
         ordSkrevet = ordSkrevet.substring(0, ordSkrevet.length - 1);
         //Sier at pointer ikke kan bli mindre enn 0 når man visker
         if (pointer > 0){
