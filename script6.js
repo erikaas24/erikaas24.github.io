@@ -322,14 +322,14 @@ function sjekkTast(e){
     if(e.keyCode == 32){
         skriveFeltEl.innerHTML += "&nbsp;";  //Legger til html koden for et mellomrom i skrivefeltet slik man visuelt ser at man har lagt til et mellomrom i stringen
         
-    }else if(e.keyCode == 8){ 
+    }else if(e.keyCode == 8|| e.key == "Backspace"){ 
         //Fjerner siste ledd av stringen ved bruk av slice. Slice kommandoen lager en ny string og redigerer ikke den gamle
         let nyTekst = tekst.slice(0,-1);
         skriveFeltEl.innerText = nyTekst; 
     } else if( e.keyCode >= 65 && e.keyCode <= 90){
         //If testen gjør slik at alle tall som ikke er bokstaver ikke skrives inn i feltet når de trykkes på
         skriveFeltEl.innerText += valgtTast;
-    } else if(e.keyCode == 222 || e.keyCode == 219 || e.keyCode == 186){
+    } else if(e.key == "å" || e.keyCode == "æ" || e.key == "ø"){
         //legger til æ ø å siden de ikke dekkes av keycode-intervallet i if-testen ovenfor
         skriveFeltEl.innerText += valgtTast;
     } 
