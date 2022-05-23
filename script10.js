@@ -68,9 +68,9 @@ function startKnappTrykket() {
 function nedTellingFunksjon() {
 
     antallSekunderGatt++;
-    navMidEl.innerText = 3 - antallSekunderGatt;
+    navMidEl.innerText = 30 - antallSekunderGatt;
 
-    if (antallSekunderGatt == 3) {
+    if (antallSekunderGatt == 30) {
         /* let WPM = (poeng * 2); */ //Dette var gamle måten å regne ut WPM på
 
         //Utregningen for WPM tar alle bokstaver man har skrevet riktig og deler det på gjennomsnittslengden av et ord i listen av ord. Det ganger så med 2 for å få et minutt. Det fører til mindre tilfeldigheter og mindre flaks for WPM man får. Det ble implementert slik at leaderboard ble mer skill-based og mindre avhengig av heldig ord-rekke.
