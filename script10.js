@@ -24,7 +24,7 @@ let ordSkrevet = ""; //Lager en tom string for teksten
 let nedTelling;
 let antallBokstavPoeng = 0;
 let nettLeserBredde = document.body.clientWidth;
-localStorage.personalBest; //Localstorage variabel defineres.
+localStorage.personalBest = 0; //Localstorage variabel defineres.
 
 //Eventlisteners
 
