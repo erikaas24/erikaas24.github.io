@@ -247,7 +247,7 @@ function registrerBruker() {
 
 
     inputFelt.value = "";
-    poeng = 0;
+    antallBokstavPoeng = 0;
 
 
 
