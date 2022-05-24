@@ -1,0 +1,665 @@
+*{
+    margin: 0;
+    padding: 0;
+} 
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #AD8B73;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* Navbar. CSS for den usynlige navbaren øverst på nettsiden */
+#navbar{
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100px;
+}
+
+#navLeft,#navRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40vw;
+}
+#navMid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    text-align: center;
+}
+
+#navRight{
+    justify-content: right;
+    padding-right: 4vw;
+    padding-left: 4.5%;
+}
+
+#navLeft{
+    justify-content: left;
+    padding-left: 4.5%;
+}
+
+#navLeft,#navMid h2{
+    color: mintcream;
+}
+
+/* CSS for knappene som åpner pop up vinduene */
+
+.popUpButtons{
+    width: 60px;
+    height: 60px;
+    background-color: #E3CAA5;
+    border-radius: 100%;
+    user-select: none; 
+}
+
+
+.popUpButtons:hover{
+    cursor: pointer;
+    background-color:#ffdcaf;
+}
+
+.popUpButtons:active{
+    background-color: #ffdcaf9d;
+}
+
+/* Dette er Css'en som gjelder når man bytter fra spørsmåltegn til kryss */
+.popUpButtons.active{
+    box-shadow:0px 0px 0px 1px black inset;
+    width: 60px;
+    height: 60px;
+}
+
+/* Måtte sette egen CSS for ene nav knappen fordi bilde sin kant var ikke ytterst når jeg importerte bilde inn. Måtte derfor legge inn en border som går innover slik at den svarte kanten fra bilde blir periferien på knappen */
+#leaderBoardButton{
+    box-shadow:0px 0px 0px 3px #AD8B73 inset;
+    height: 69px;
+    width: 69px;
+    margin-right: 1em;
+}
+
+#leaderBoardButton.active{
+    box-shadow:0px 0px 0px 1px black inset;
+    width: 60px;
+    height: 60px;
+    margin-right: 1.205em;
+}
+
+/* CSS for det ene pop up vinduet med instruksjoner*/
+
+#instruksjonsMeny{
+    background-color: #E3CAA5;
+    width: 72vw;
+    height: 80vh;
+    z-index: 5;
+    position: absolute;
+    display: none;
+    margin-top: 8%;
+    box-shadow: 2px 2px 7px;
+}
+#instruksjonsMeny.active{
+    display: flex;
+} 
+
+#instruksjonsTekst {
+    background-color: #FFFBE9;
+    width: 80%;
+    height: 80%;
+    margin: 4.1% auto;
+    padding: 2%;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; 
+
+    box-shadow: 1px 1px 7px;
+    font-size: 1.4vw;
+    text-align: center;
+}
+#instruksjonsTekst p {
+    padding: 2vh 0;
+}
+
+#instruksjonsTekst.active{
+    display: flex;
+}
+
+/* CSS for leaderboardet */
+#leaderBoard{
+    background-color: #E3CAA5;
+    position: absolute;
+    height: 80vh;
+    width: 72vw;
+    z-index: 5;
+    margin-top: 8%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 2px 2px 7px;
+}
+
+#leaderBoard.active{
+    display: flex;
+}
+/* CSS for det inni leaderboardet */
+#topBarHighScoreList{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 4%;
+    
+}
+
+#tittelOgFeilmelding{
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+}
+
+#tittelOgFeilmelding h1{
+    margin-bottom: 6%;
+} 
+
+#feilMelding{
+    position: relative;
+    color: #f54242;
+}
+
+
+#registrering{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#registrerKnapp{
+    margin-top: 6%;
+    padding: 2%;
+}
+#brukerNavnInput{
+    padding: 2%;
+    margin-top: 2%;
+}
+
+
+/* CSS for tabeller */
+
+table{
+    border-collapse: collapse;
+    background-color: #FFFBE9;
+    width: 95%;
+}
+
+th{
+    background-color: rgb(69, 69, 126);
+    color: #FFFBE9;
+}
+
+
+th,td{
+    border: solid 1px #000;
+    padding: 10px;
+    width: 33.333%;
+}
+/* CSS for tabellen som viser kun ens egen score */
+#tablePlassering{
+    border: 4px solid #039e18 ;
+}
+
+/* CSS for Start og Reset knappene*/
+#knapperContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 24vw;
+    height: 12vh;
+    padding: 2%;
+}
+/* (inkluderer også registreringsknappen)  */
+.knapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFBE9;
+    box-shadow: 2px 2px 7px;
+    width: 48%; 
+    height: 100%;
+    user-select: none; 
+}
+
+.knapper:hover{
+    background-color: #E3CAA5;
+    transition: background-color 0.1s;
+    cursor:pointer;
+}
+
+.knapper:active{
+    width: 49.5%;  
+    height: 101%;  
+    transition: height 0.01s; 
+    transition: width 0.01s; 
+}
+/* CSS for det beige elementet skrivefeltet og tekstfeltet(teknisk sett) er inni */
+#hoved{
+    z-index: 1;
+    margin: 2% auto;
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E3CAA5;
+    box-shadow: 2px 2px 7px;
+}
+/* CSS for tekstfeltet  */
+#tekstFelt{
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFBE9;
+    justify-content: center;
+    align-items: center; 
+    height: 30vh;
+    width: 70vw;
+    margin-bottom: 10%;
+    box-shadow: 0px 2px 7px;
+}
+
+#tekstFelt.active{
+    flex-direction: column;
+}
+
+#tekstFelt h1 {
+    font-size: 4vw;
+}
+
+#tekstFelt h3{
+    margin-top: 2.53%;
+}
+
+.tekstLinje{
+    display: flex;
+    flex-direction: row;
+    width: 74%;
+    
+}
+span{
+    display: flex;
+    flex-direction: row;
+    margin: 0 4px 0 4px;
+    font-size: 1.6vw;
+}
+
+
+/* CSS for skrivefeltet */
+#skriveFelt{
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    width: 15vw;
+    border: solid 1px rgb(78, 63, 33);
+    padding-left: 15%;
+    margin-bottom: 20%;
+} 
+
+#skriveFelt.inactive{
+    background-color:#f0eddf ;
+    border: solid 2px #f54242;
+}
+
+#skriveFelt.active{
+    background-color: #FFFBE9;
+    border: solid 2px #039e18;;
+    
+}
+
+#skriveFeltInner{
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 4vh;
+    font-size: 1.5vw;
+    
+}
+
+#textCursor{
+    position: relative;
+    left: -0.3vw;
+    height: 40%;
+    width: 2px;
+    background-color: rgb(92, 74, 39);
+} 
+
+/* Alt nedenfor er @media queries som gjør at programmet blir tilpasset mange skjermstørrelser */
+
+@media only screen and (max-width: 1050px){
+    
+    span p{
+        font-size: 2vw
+    }
+
+    #tekstFelt{
+        width: 85vw;
+    }
+
+    #tekstFelt h1{
+        font-size: 5vw;
+    }
+    #hoved{
+        width: 60vw;
+    }
+    
+    .tekstLinje{
+        width: 80%;
+    }
+
+    #knapperContainer{
+        width: 35vw;
+    }
+
+    #skriveFelt{
+        height: 7vh;
+        width: 18vw;
+    }
+    #innerSkriveFelt{
+        height: 80%;
+        font-size: 2vw;
+    }
+
+    #instruksjonsMeny{
+        width: 85vw;
+        margin-top: 11.8%;
+    }
+
+    #leaderBoard{
+        width: 85vw;
+        margin-top: 11.8%;
+    }
+    
+    #instruksjonsTekst{
+        font-size: 1.95vw;
+    }
+    
+}
+
+@media only screen and (max-width: 750px){
+    span p{
+        font-size: 2.9vw
+    }
+
+    #tekstFelt{
+        width: 90vw;
+        height: 40vh;
+    }
+
+    
+
+    #tekstFelt h1{
+        font-size: 3vw;
+    }
+
+    #knapperContainer{
+        width: 40vw;
+    }
+
+    #tekstFelt{
+        flex-direction: row;
+
+    }
+
+    #tekstFelt h1{
+        font-size: 8vw;
+    }
+
+    .tekstLinje{
+        flex-direction: column;
+        width: 70%;
+    }
+
+    span{
+        justify-content: center;
+    }
+
+    #skriveFeltInner{
+        font-size: 2.3vw;
+    }
+
+    #instruksjonsMeny{
+        margin-top: 15.7%;
+        width: 90vw;
+    }
+    
+    #instruksjonsTekst{
+        font-size: 2.7vw;
+    }
+
+    #leaderBoard{
+        margin-top: 15.7%;
+        width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    #navLeft{
+        padding-left: 10%;
+    }
+
+    #navLeft h2{
+        font-size: 5vw;
+    }
+    #navMid h2{
+        font-size: 4vw;
+    }
+
+    #hoved{
+        width: 90%;
+        
+    }
+    #tekstFelt{
+        width: 100vw;
+        flex-direction: row;
+        height: 40vh;
+    }
+    #tekstFelt h1{
+        font-size: 9vw;
+    }
+
+    span{
+        justify-content: center;
+    }
+
+    span p {
+        font-size: 3.7vw;
+    }
+
+    .tekstLinje{
+        flex-direction: column;
+    }
+
+    #instruksjonsMeny{
+        width: 100vw;
+        height: 89vh;
+        margin-top: 19%;
+    }
+    #instruksjonsTekst{
+        font-size: 4vw;
+        padding: 2%;
+        width: 80%;
+        height: 90%;
+        padding: 4%;
+        
+    }
+    #leaderBoard{
+        width: 100vw;
+        height: 89vh;
+        margin-top: 19%;
+    }
+
+    #knapperContainer{
+        width: 70vw;
+    }
+
+    #skriveFelt{
+        width: 30vw;
+    }
+    #skriveFeltInner{
+        font-size: 4vw;
+    }
+}
+
+@media only screen and (max-width: 450px){
+
+    #instruksjonsMeny{
+        display: initial;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+    };
+
+}
+
+@media only screen and (min-width: 1500px){
+
+    #tekstFelt{
+        width: 60vw;
+    }
+
+    #hoved{
+        width:40vw ;
+    }  
+
+    #skriveFelt{
+        width: 12vw;
+    }
+    #skriveFeltInner{
+        font-size: 1.2vw;
+    }
+
+    #tekstFelt h1{
+        font-size: 2.5vw;
+    }
+    
+
+    .tekstLinje{
+        width: 60% ;
+    }
+
+    span p {
+        font-size: 1.2vw;
+    }
+
+    .knapper{
+        font-size: 1vw;
+    }
+
+    .knapper:active{
+        width: 48.5%;
+    }
+
+    #instruksjonsMeny{
+        margin-top: 6%;
+        width: 60vw;
+        height: 75vh;
+    }
+    #leaderBoard{
+        margin-top: 6%;
+        width: 60vw;
+        height: 75vh;
+    }
+
+    #instruksjonsTekst{
+        font-size: 1.2vw ;
+    }
+    
+}
+
+/* Tilpasser CSS for ulik skjermhøyde(lenovo-pcene alle bruker på skolen har lavere skjerm */
+
+@media only screen and (max-height: 760px){
+
+    th,td{
+        padding: 8px;
+    }
+    
+    #topBarHighScoreList{
+        margin-top: 3%;
+    }
+
+}
+@media only screen and (max-height: 720px){
+
+    th,td{
+        padding: 7px;
+    }
+    #topBarHighScoreList{
+        margin-top: 2.5%;
+    }
+
+}
+/* Dette tilpasser innholdet slik at det ser bedre ut for lenovo på fullskjerm */
+@media only screen and (max-height: 690px) and (min-width: 1050px){
+
+    th,td{
+        padding: 5.5px;
+    }
+    #topBarHighScoreList{
+        margin-top: 2%;
+    }
+
+    #hoved{
+        width: 42vw;
+    }
+
+    #tekstFelt{
+        width: 60vw ;
+    }
+
+
+    #tekstFelt h1{
+        font-size: 3.5vw;
+    }
+
+    #knapperContainer{
+        height: 15vh;
+    }
+
+    span p{
+        font-size: 1.4vw;
+    }
+
+}
+
+@media only screen and (max-height: 630px){
+
+    th,td{
+        padding: 4px;
+    }
+    #topBarHighScoreList{
+        margin-top: 2%;
+    }
+
+}
+
